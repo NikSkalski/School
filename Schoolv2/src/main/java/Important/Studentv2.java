@@ -18,6 +18,12 @@ public class Studentv2 {
     @JoinColumn(name="TUTOR_FK")
     private Tutorv2 tutor;
 
+
+    public void setTutor(Tutorv2 tutor) {
+        this.tutor = tutor;
+        this.tutor.getSupervisionGroup().add(this);
+    }
+
     public Tutorv2 getTutor() {
         return tutor;
     }
@@ -26,11 +32,6 @@ public class Studentv2 {
         return NumberOfCourses;
     }
 
-
-
-    public void setTutor(Tutorv2 tutor) {
-        this.tutor = tutor;
-    }
 
     public void setTutorName() {
         this.tutorName = tutor.getName();

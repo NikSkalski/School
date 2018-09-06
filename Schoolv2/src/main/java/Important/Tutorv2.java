@@ -11,9 +11,31 @@ public class Tutorv2 {
     private String staffID;
     private String name;
     private int salary;
+    private String NameOfASubject;
     @OneToMany
     @JoinColumn(name="TUTOR_FK")
     private Set<Studentv2> supervisionGroup;
+
+    public Set<Subjectv2> getTaughtsubjects() {
+        return taughtsubjects;
+    }
+
+    public void setTaughtsubjects(Set<Subjectv2> taughtsubjects) {
+        this.taughtsubjects = taughtsubjects;
+    }
+
+    public String getNameOfASubject() {
+
+        return NameOfASubject;
+    }
+
+    public void setNameOfASubject(String nameOfASubject) {
+        NameOfASubject = nameOfASubject;
+    }
+
+    @ManyToMany(mappedBy = "specializedTutors")
+    private Set<Subjectv2> taughtsubjects;
+
     public Tutorv2() {
     }
 

@@ -13,5 +13,6 @@
 
         <mapping class="Important.Studentv2"></mapping>
         <mapping class="Important.Tutorv2"></mapping>
+        <mapping class="Important.Subjectv2"></mapping>
     </session-factory>
 </hibernate-configuration>
